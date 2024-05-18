@@ -6,6 +6,7 @@
 size = Vector2(15, 7)
 
 [node name="Area2D" type="Area2D"]
+scale = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 4.5)
