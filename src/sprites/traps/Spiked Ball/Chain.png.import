@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://841c3g0fn82o"
-path="res://.godot/imported/Idle.png-6855e071596988a4200c02d8772d7adc.ctex"
+uid="uid://d18cueobjvxar"
+path="res://.godot/imported/Chain.png-2c654186b55339bdfb9f3dfe31d34f87.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MapsAndOther/Traps/Spike Head/Idle.png"
-dest_files=["res://.godot/imported/Idle.png-6855e071596988a4200c02d8772d7adc.ctex"]
+source_file="res://src/sprites/traps/Spiked Ball/Chain.png"
+dest_files=["res://.godot/imported/Chain.png-2c654186b55339bdfb9f3dfe31d34f87.ctex"]
 
 [params]
 

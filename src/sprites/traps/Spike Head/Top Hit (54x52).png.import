@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://damul810m4072"
-path="res://.godot/imported/Idle.png-66a70ce4ef10150fcd3f8ad078d3d519.ctex"
+uid="uid://cb8a0h6d2xa1s"
+path="res://.godot/imported/Top Hit (54x52).png-f4a4e8149b267da60feb9b6c6819f394.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MapsAndOther/Traps/Rock Head/Idle.png"
-dest_files=["res://.godot/imported/Idle.png-66a70ce4ef10150fcd3f8ad078d3d519.ctex"]
+source_file="res://src/sprites/traps/Spike Head/Top Hit (54x52).png"
+dest_files=["res://.godot/imported/Top Hit (54x52).png-f4a4e8149b267da60feb9b6c6819f394.ctex"]
 
 [params]
 

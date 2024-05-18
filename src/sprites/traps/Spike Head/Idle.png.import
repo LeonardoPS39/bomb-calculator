@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cobwx6nxna5jv"
-path="res://.godot/imported/Spiked Ball.png-f82f142fed74246172ad67627aae5ea7.ctex"
+uid="uid://841c3g0fn82o"
+path="res://.godot/imported/Idle.png-3660be0648d78fd6ee40c2a990c1e5cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MapsAndOther/Traps/Spiked Ball/Spiked Ball.png"
-dest_files=["res://.godot/imported/Spiked Ball.png-f82f142fed74246172ad67627aae5ea7.ctex"]
+source_file="res://src/sprites/traps/Spike Head/Idle.png"
+dest_files=["res://.godot/imported/Idle.png-3660be0648d78fd6ee40c2a990c1e5cc.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb8a0h6d2xa1s"
-path="res://.godot/imported/Top Hit (54x52).png-70e2d9f6025e828ec36d99ddf5a9dd9f.ctex"
+uid="uid://dhmmfq6hsap4h"
+path="res://.godot/imported/Left Hit (54x52).png-8e43f40b4c1a911e622c70c62116dec6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MapsAndOther/Traps/Spike Head/Top Hit (54x52).png"
-dest_files=["res://.godot/imported/Top Hit (54x52).png-70e2d9f6025e828ec36d99ddf5a9dd9f.ctex"]
+source_file="res://src/sprites/traps/Spike Head/Left Hit (54x52).png"
+dest_files=["res://.godot/imported/Left Hit (54x52).png-8e43f40b4c1a911e622c70c62116dec6.ctex"]
 
 [params]
 

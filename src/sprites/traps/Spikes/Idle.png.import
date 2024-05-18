@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhf4u6m8u0r2m"
-path="res://.godot/imported/Bottom Hit (42x42).png-672c7ad7e6f5cf2087f64ebe8f109604.ctex"
+uid="uid://d03vrp2knj0ex"
+path="res://.godot/imported/Idle.png-fceefb1bbcd5718742063e766df3f8d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MapsAndOther/Traps/Rock Head/Bottom Hit (42x42).png"
-dest_files=["res://.godot/imported/Bottom Hit (42x42).png-672c7ad7e6f5cf2087f64ebe8f109604.ctex"]
+source_file="res://src/sprites/traps/Spikes/Idle.png"
+dest_files=["res://.godot/imported/Idle.png-fceefb1bbcd5718742063e766df3f8d1.ctex"]
 
 [params]
 

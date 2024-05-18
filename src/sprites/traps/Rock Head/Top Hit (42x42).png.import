@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boup2u3kderes"
-path="res://.godot/imported/Bottom Hit (54x52).png-f01d1eac3641e379c7dc0d03d7597b77.ctex"
+uid="uid://mrqbhwohu21q"
+path="res://.godot/imported/Top Hit (42x42).png-68716d59420abf607ffddf388fa3f566.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MapsAndOther/Traps/Spike Head/Bottom Hit (54x52).png"
-dest_files=["res://.godot/imported/Bottom Hit (54x52).png-f01d1eac3641e379c7dc0d03d7597b77.ctex"]
+source_file="res://src/sprites/traps/Rock Head/Top Hit (42x42).png"
+dest_files=["res://.godot/imported/Top Hit (42x42).png-68716d59420abf607ffddf388fa3f566.ctex"]
 
 [params]
 

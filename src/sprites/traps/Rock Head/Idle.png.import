@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gcitlphn36o8"
-path="res://.godot/imported/Right Hit (42x42).png-11c0a2d0a979a9f15bcd91a093aa3373.ctex"
+uid="uid://damul810m4072"
+path="res://.godot/imported/Idle.png-dcbd0d77c4e766f0234eba07db84bcfd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MapsAndOther/Traps/Rock Head/Right Hit (42x42).png"
-dest_files=["res://.godot/imported/Right Hit (42x42).png-11c0a2d0a979a9f15bcd91a093aa3373.ctex"]
+source_file="res://src/sprites/traps/Rock Head/Idle.png"
+dest_files=["res://.godot/imported/Idle.png-dcbd0d77c4e766f0234eba07db84bcfd.ctex"]
 
 [params]
 

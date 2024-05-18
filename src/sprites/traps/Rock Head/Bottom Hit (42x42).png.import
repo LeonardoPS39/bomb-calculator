@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d18cueobjvxar"
-path="res://.godot/imported/Chain.png-9b4e628727e08e2b026569fce057066d.ctex"
+uid="uid://dhf4u6m8u0r2m"
+path="res://.godot/imported/Bottom Hit (42x42).png-5c5ff62233a6120605752cc6dc3f0a10.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MapsAndOther/Traps/Spiked Ball/Chain.png"
-dest_files=["res://.godot/imported/Chain.png-9b4e628727e08e2b026569fce057066d.ctex"]
+source_file="res://src/sprites/traps/Rock Head/Bottom Hit (42x42).png"
+dest_files=["res://.godot/imported/Bottom Hit (42x42).png-5c5ff62233a6120605752cc6dc3f0a10.ctex"]
 
 [params]
 

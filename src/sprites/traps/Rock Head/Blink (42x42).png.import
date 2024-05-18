@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4xbs5jhs2ml6"
-path="res://.godot/imported/Blink (54x52).png-7bc90cd4518d7447b281eff2b5117d2f.ctex"
+uid="uid://cxmqg2wul6bde"
+path="res://.godot/imported/Blink (42x42).png-082132fb8ce0aa9dd30e861c507b2381.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MapsAndOther/Traps/Spike Head/Blink (54x52).png"
-dest_files=["res://.godot/imported/Blink (54x52).png-7bc90cd4518d7447b281eff2b5117d2f.ctex"]
+source_file="res://src/sprites/traps/Rock Head/Blink (42x42).png"
+dest_files=["res://.godot/imported/Blink (42x42).png-082132fb8ce0aa9dd30e861c507b2381.ctex"]
 
 [params]
 
