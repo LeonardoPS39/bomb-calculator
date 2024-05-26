@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://crge8xfuqcche"]
+[gd_scene load_steps=12 format=3 uid="uid://crge8xfuqcche"]
 
 [ext_resource type="Texture2D" uid="uid://eibusvysedrr" path="res://src/sprites/map/Terrain (16x16).png" id="1_g5jb0"]
 [ext_resource type="Texture2D" uid="uid://cmxso08jy0ndo" path="res://MapsAndOther/Background/Brown.png" id="2_ar7lj"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bikgmkk5auqhx" path="res://src/animations/PlayerCharacter.tscn" id="4_usqu5"]
 [ext_resource type="PackedScene" uid="uid://khmoxhbjctca" path="res://src/animations/door_1.tscn" id="5_snffl"]
 [ext_resource type="PackedScene" uid="uid://cbdmsl86pdp16" path="res://src/animations/spikes.tscn" id="6_yf5ku"]
+[ext_resource type="PackedScene" uid="uid://ccs4t5u66rvmd" path="res://src/animations/checkpoint.tscn" id="9_030sf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f833j"]
 texture = ExtResource("1_g5jb0")
@@ -565,39 +566,6 @@ texture = ExtResource("1_g5jb0")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_f833j")
 
-[sub_resource type="GDScript" id="GDScript_6bt04"]
-script/source = "extends Area2D
-
-@onready var collision = $CollisionShape2D
-@onready var sprite = $Sprite2D
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	collision.shape.extents = sprite.get_rect().size / 2
-
-func _on_body_entered(body):
-	if body.name == \"PlayerCharacter\":
-		var respawn = Vector2(86, 381)
-		body.position = respawn
-"
-
-[sub_resource type="GDScript" id="GDScript_b1645"]
-script/source = "extends Area2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2w54"]
-size = Vector2(71.0625, 231)
-
 [node name="Main" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -646,6 +614,7 @@ layer_1/name = "Background"
 layer_1/tile_data = PackedInt32Array()
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("4_usqu5")]
+texture_filter = 1
 position = Vector2(86, 381)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerCharacter"]
@@ -671,357 +640,237 @@ collision_layer = 2
 [node name="Area2D3" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3045, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D4" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3026, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D2" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3007, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(2988, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D5" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3121, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D6" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3102, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D7" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3083, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D8" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3064, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D9" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3304, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D10" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3285, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D11" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3266, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D12" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3247, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D13" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3377, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D14" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3358, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D15" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3339, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D16" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3320, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D17" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3453, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D18" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3434, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D19" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3415, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D20" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3396, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D21" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3529, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D22" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3510, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D23" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3491, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D24" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3472, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D25" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3605, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D26" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3586, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D27" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3567, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D28" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3548, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D29" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3681, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D30" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3662, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D31" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3643, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D32" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3624, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D33" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3757, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D34" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3738, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D35" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3719, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D36" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3700, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D37" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3833, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D38" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3814, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D39" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3795, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D40" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3776, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D41" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3909, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D42" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3890, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D43" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3871, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D44" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3852, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D45" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3985, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D46" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3966, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D47" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3947, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D48" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(3928, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D49" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(4061, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D50" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(4042, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D51" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(4023, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D52" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(4004, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D53" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(4137, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D54" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(4118, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D55" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(4099, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D56" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(4080, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D57" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(4175, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
 [node name="Area2D58" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(4156, 600)
 collision_mask = 1
-script = SubResource("GDScript_6bt04")
 
-[node name="Node" type="Node" parent="."]
+[node name="Area2D" parent="." instance=ExtResource("9_030sf")]
+position = Vector2(4868, 524)
 
-[node name="Area2D" type="Area2D" parent="Node"]
-script = SubResource("GDScript_b1645")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D"]
-position = Vector2(4995.47, 491.5)
-shape = SubResource("RectangleShape2D_c2w54")
-
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D3" to="FirstLevel_elements/Start Spikes/Area2D3" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D4" to="FirstLevel_elements/Start Spikes/Area2D4" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D2" to="FirstLevel_elements/Start Spikes/Area2D2" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D" to="FirstLevel_elements/Start Spikes/Area2D" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D5" to="FirstLevel_elements/Start Spikes/Area2D5" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D6" to="FirstLevel_elements/Start Spikes/Area2D6" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D7" to="FirstLevel_elements/Start Spikes/Area2D7" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D8" to="FirstLevel_elements/Start Spikes/Area2D8" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D9" to="FirstLevel_elements/Start Spikes/Area2D9" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D10" to="FirstLevel_elements/Start Spikes/Area2D10" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D11" to="FirstLevel_elements/Start Spikes/Area2D11" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D12" to="FirstLevel_elements/Start Spikes/Area2D12" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D13" to="FirstLevel_elements/Start Spikes/Area2D13" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D14" to="FirstLevel_elements/Start Spikes/Area2D14" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D15" to="FirstLevel_elements/Start Spikes/Area2D15" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D16" to="FirstLevel_elements/Start Spikes/Area2D16" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D17" to="FirstLevel_elements/Start Spikes/Area2D17" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D18" to="FirstLevel_elements/Start Spikes/Area2D18" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D19" to="FirstLevel_elements/Start Spikes/Area2D19" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D20" to="FirstLevel_elements/Start Spikes/Area2D20" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D21" to="FirstLevel_elements/Start Spikes/Area2D21" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D22" to="FirstLevel_elements/Start Spikes/Area2D22" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D23" to="FirstLevel_elements/Start Spikes/Area2D23" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D24" to="FirstLevel_elements/Start Spikes/Area2D24" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D25" to="FirstLevel_elements/Start Spikes/Area2D25" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D26" to="FirstLevel_elements/Start Spikes/Area2D26" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D27" to="FirstLevel_elements/Start Spikes/Area2D27" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D28" to="FirstLevel_elements/Start Spikes/Area2D28" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D29" to="FirstLevel_elements/Start Spikes/Area2D29" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D30" to="FirstLevel_elements/Start Spikes/Area2D30" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D31" to="FirstLevel_elements/Start Spikes/Area2D31" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D32" to="FirstLevel_elements/Start Spikes/Area2D32" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D33" to="FirstLevel_elements/Start Spikes/Area2D33" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D34" to="FirstLevel_elements/Start Spikes/Area2D34" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D35" to="FirstLevel_elements/Start Spikes/Area2D35" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D36" to="FirstLevel_elements/Start Spikes/Area2D36" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D37" to="FirstLevel_elements/Start Spikes/Area2D37" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D38" to="FirstLevel_elements/Start Spikes/Area2D38" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D39" to="FirstLevel_elements/Start Spikes/Area2D39" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D40" to="FirstLevel_elements/Start Spikes/Area2D40" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D41" to="FirstLevel_elements/Start Spikes/Area2D41" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D42" to="FirstLevel_elements/Start Spikes/Area2D42" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D43" to="FirstLevel_elements/Start Spikes/Area2D43" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D44" to="FirstLevel_elements/Start Spikes/Area2D44" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D45" to="FirstLevel_elements/Start Spikes/Area2D45" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D46" to="FirstLevel_elements/Start Spikes/Area2D46" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D47" to="FirstLevel_elements/Start Spikes/Area2D47" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D48" to="FirstLevel_elements/Start Spikes/Area2D48" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D49" to="FirstLevel_elements/Start Spikes/Area2D49" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D50" to="FirstLevel_elements/Start Spikes/Area2D50" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D51" to="FirstLevel_elements/Start Spikes/Area2D51" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D52" to="FirstLevel_elements/Start Spikes/Area2D52" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D53" to="FirstLevel_elements/Start Spikes/Area2D53" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D54" to="FirstLevel_elements/Start Spikes/Area2D54" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D55" to="FirstLevel_elements/Start Spikes/Area2D55" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D56" to="FirstLevel_elements/Start Spikes/Area2D56" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D57" to="FirstLevel_elements/Start Spikes/Area2D57" method="_on_body_entered"]
-[connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D58" to="FirstLevel_elements/Start Spikes/Area2D58" method="_on_body_entered"]
+[connection signal="ready" from="PlayerCharacter" to="PlayerCharacter" method="_on_ready"]
+[connection signal="ready" from="Area2D" to="PlayerCharacter" method="_on_area_2d_ready"]
