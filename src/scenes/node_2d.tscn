@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ca4735pg4ykrj" path="res://src/animations/bomb_on.tscn" id="3_q5tfl"]
 [ext_resource type="PackedScene" uid="uid://bikgmkk5auqhx" path="res://src/animations/PlayerCharacter.tscn" id="4_usqu5"]
 [ext_resource type="PackedScene" uid="uid://khmoxhbjctca" path="res://src/animations/door_1.tscn" id="5_snffl"]
+[ext_resource type="Script" path="res://src/scripts/Area2D.gd" id="6_073jc"]
 [ext_resource type="PackedScene" uid="uid://cbdmsl86pdp16" path="res://src/animations/spikes.tscn" id="6_yf5ku"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f833j"]
@@ -565,6 +566,9 @@ texture = ExtResource("1_g5jb0")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_f833j")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsyla"]
+size = Vector2(63, 194)
+
 [sub_resource type="GDScript" id="GDScript_6bt04"]
 script/source = "extends Area2D
 
@@ -580,23 +584,6 @@ func _on_body_entered(body):
 		var respawn = Vector2(86, 381)
 		body.position = respawn
 "
-
-[sub_resource type="GDScript" id="GDScript_b1645"]
-script/source = "extends Area2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2w54"]
-size = Vector2(71.0625, 231)
 
 [node name="Main" type="Node2D"]
 
@@ -646,7 +633,7 @@ layer_1/name = "Background"
 layer_1/tile_data = PackedInt32Array()
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("4_usqu5")]
-position = Vector2(86, 381)
+position = Vector2(4, -205)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerCharacter"]
 position = Vector2(-2.5, 1.5)
@@ -654,13 +641,23 @@ scale = Vector2(0.5, 0.5)
 
 [node name="FirstLevel_elements" type="Node" parent="."]
 
+[node name="popup" type="Node2D" parent="FirstLevel_elements"]
+
+[node name="Area2D" type="Area2D" parent="FirstLevel_elements/popup"]
+position = Vector2(4682, 592)
+collision_layer = 2
+script = ExtResource("6_073jc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FirstLevel_elements/popup/Area2D"]
+position = Vector2(-4618, -793)
+shape = SubResource("RectangleShape2D_nsyla")
+
 [node name="First_Bomb" parent="FirstLevel_elements" instance=ExtResource("3_q5tfl")]
 position = Vector2(4671, 380)
 motion_mode = 1
 
 [node name="Door" parent="FirstLevel_elements" instance=ExtResource("5_snffl")]
 position = Vector2(4448, 352)
-collision_layer = 2
 
 [node name="Door2" parent="FirstLevel_elements" instance=ExtResource("5_snffl")]
 position = Vector2(4832, 353)
@@ -958,15 +955,7 @@ position = Vector2(4156, 600)
 collision_mask = 1
 script = SubResource("GDScript_6bt04")
 
-[node name="Node" type="Node" parent="."]
-
-[node name="Area2D" type="Area2D" parent="Node"]
-script = SubResource("GDScript_b1645")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D"]
-position = Vector2(4995.47, 491.5)
-shape = SubResource("RectangleShape2D_c2w54")
-
+[connection signal="body_entered" from="FirstLevel_elements/popup/Area2D" to="FirstLevel_elements/popup/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D3" to="FirstLevel_elements/Start Spikes/Area2D3" method="_on_body_entered"]
 [connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D4" to="FirstLevel_elements/Start Spikes/Area2D4" method="_on_body_entered"]
 [connection signal="body_entered" from="FirstLevel_elements/Start Spikes/Area2D2" to="FirstLevel_elements/Start Spikes/Area2D2" method="_on_body_entered"]

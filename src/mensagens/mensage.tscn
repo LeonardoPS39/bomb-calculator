@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8cy42yyyp6p2"]
+
+[ext_resource type="Texture2D" uid="uid://p4gvp577ek7q" path="res://MapsAndOther/Background/Pink.png" id="1_1fc07"]
+[ext_resource type="Script" path="res://src/scripts/mensage.gd" id="1_ol7xb"]
+[ext_resource type="FontFile" uid="uid://37kl0jrqc4kq" path="res://src/fonts/at01.ttf" id="2_brxi2"]
+
+[node name="Mensage" type="MarginContainer"]
+offset_right = 267.0
+offset_bottom = 235.0
+script = ExtResource("1_ol7xb")
+
+[node name="background" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_1fc07")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="label_margin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="text_label" type="Label" parent="label_margin"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_brxi2")
+theme_override_font_sizes/font_size = 32
+vertical_alignment = 1
+
+[node name="letter_timer_display" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="letter_timer_display" to="." method="_on_letter_timer_display_timeout"]
