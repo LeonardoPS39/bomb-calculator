@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://bikgmkk5auqhx"]
+[gd_scene load_steps=47 format=3 uid="uid://bikgmkk5auqhx"]
 
 [ext_resource type="Texture2D" uid="uid://k48b1j1n2lsr" path="res://MapsAndOther/Main Characters/Virtual Guy/Fall (32x32).png" id="1_lrq04"]
 [ext_resource type="Texture2D" uid="uid://c2vwye7ktqcxw" path="res://src/sprites/character/frog/Idle (32x32).png" id="1_p7d8o"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://c44a574wgy8cg" path="res://MapsAndOther/Main Characters/Virtual Guy/Jump (32x32).png" id="4_vifq4"]
 [ext_resource type="Texture2D" uid="uid://dmqmiaxxq8uqt" path="res://MapsAndOther/Main Characters/Virtual Guy/Run (32x32).png" id="5_266g8"]
 [ext_resource type="Texture2D" uid="uid://ct0qs3e8jcdjq" path="res://MapsAndOther/Main Characters/Virtual Guy/Wall Jump (32x32).png" id="6_5oe3i"]
-[ext_resource type="PackedScene" uid="uid://bngxj8l08kub0" path="res://src/animations/speedrun.tscn" id="8_hqqjs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fobku"]
 atlas = ExtResource("1_lrq04")
@@ -318,5 +317,3 @@ frame_progress = 0.589749
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 3.5)
 shape = SubResource("RectangleShape2D_7xxwi")
-
-[node name="CanvasLayer" parent="." instance=ExtResource("8_hqqjs")]

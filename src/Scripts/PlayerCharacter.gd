@@ -44,8 +44,16 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 		_animated_sprite.play("Fall")
 		_animated_sprite.flip_h=false
-	else:
+	elif direction == 0 and velocity.y == 0:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		_animated_sprite.play("Idle")
+	elif direction == 0 and velocity.y < 0:
+		velocity.x = 0
+		_animated_sprite.play("Jump")
+	elif direction == 0 and velocity.y > 0:
+		velocity.x = 0
+		_animated_sprite.play("Fall")
+		
+		
 	
 	move_and_slide()
