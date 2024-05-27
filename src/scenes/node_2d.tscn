@@ -615,7 +615,7 @@ layer_1/tile_data = PackedInt32Array()
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("4_usqu5")]
 texture_filter = 1
-position = Vector2(86, 381)
+position = Vector2(4330, 540)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerCharacter"]
 position = Vector2(-2.5, 1.5)

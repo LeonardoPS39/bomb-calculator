@@ -10,23 +10,21 @@ size = Vector2(37, 49)
 scale = Vector2(2, 2)
 script = ExtResource("1_yqmo0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_0mnhj")
-disabled = true
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-4.76837e-07, 1.25)
 scale = Vector2(0.474359, 0.515625)
 texture = ExtResource("1_t7svm")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_0mnhj")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_0mnhj")
-disabled = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
