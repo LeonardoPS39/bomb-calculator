@@ -627,14 +627,6 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(4671, 380)
 motion_mode = 1
 
-[node name="Door" parent="FirstLevel_elements" instance=ExtResource("5_snffl")]
-position = Vector2(4448, 352)
-collision_layer = 2
-
-[node name="Door2" parent="FirstLevel_elements" instance=ExtResource("5_snffl")]
-position = Vector2(4832, 353)
-collision_layer = 2
-
 [node name="Start Spikes" type="Node" parent="FirstLevel_elements"]
 
 [node name="Area2D3" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
@@ -868,6 +860,13 @@ collision_mask = 1
 [node name="Area2D58" parent="FirstLevel_elements/Start Spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(4156, 600)
 collision_mask = 1
+
+[node name="PortaEntrada" parent="FirstLevel_elements" instance=ExtResource("5_snffl")]
+position = Vector2(4544, 494)
+teste = "entrada"
+
+[node name="PortaSaida" parent="FirstLevel_elements" instance=ExtResource("5_snffl")]
+position = Vector2(4801, 494)
 
 [node name="Area2D" parent="." instance=ExtResource("9_030sf")]
 position = Vector2(4868, 524)
