@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://crge8xfuqcche"]
+[gd_scene load_steps=16 format=3 uid="uid://crge8xfuqcche"]
 
 [ext_resource type="Texture2D" uid="uid://eibusvysedrr" path="res://src/sprites/map/Terrain (16x16).png" id="1_g5jb0"]
 [ext_resource type="Texture2D" uid="uid://cmxso08jy0ndo" path="res://MapsAndOther/Background/Brown.png" id="2_ar7lj"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cbdmsl86pdp16" path="res://src/animations/spikes.tscn" id="6_yf5ku"]
 [ext_resource type="PackedScene" uid="uid://ccs4t5u66rvmd" path="res://src/animations/checkpoint.tscn" id="9_030sf"]
 [ext_resource type="PackedScene" uid="uid://b2eu07dvhi8lt" path="res://src/scenes/desafio1.tscn" id="10_mgnvf"]
+[ext_resource type="PackedScene" uid="uid://chgvrktlwmamx" path="res://src/scenes/desafio2.tscn" id="11_nkx22"]
+[ext_resource type="PackedScene" uid="uid://b58qicl7ca3mj" path="res://src/scenes/desafio3.tscn" id="12_b66h0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f833j"]
 texture = ExtResource("1_g5jb0")
@@ -610,10 +612,9 @@ layer_0/tile_data = PackedInt32Array(1310861, 0, 6, 1310862, 65536, 6, 1310863, 
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("4_usqu5")]
 texture_filter = 1
-position = Vector2(12188, -184)
+position = Vector2(78, 510)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerCharacter"]
-position = Vector2(-2.5, 1.5)
 scale = Vector2(0.5, 0.5)
 
 [node name="FirstLevel_elements" type="Node" parent="."]
@@ -804,22 +805,12 @@ position = Vector2(4544, 494)
 teste = "entrada"
 
 [node name="PortaSaida" parent="FirstLevel_elements" instance=ExtResource("5_snffl")]
-position = Vector2(4801, 494)
+position = Vector2(4809, 494)
 
 [node name="SecondLevel_elements" type="Node" parent="."]
 
 [node name="First_Checkpoint" parent="SecondLevel_elements" instance=ExtResource("9_030sf")]
 position = Vector2(4868, 524)
-
-[node name="Area2D2" type="Area2D" parent="."]
-position = Vector2(4615, 490)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-shape = SubResource("RectangleShape2D_vfj4n")
-
-[node name="Desafio1" parent="Area2D2" instance=ExtResource("10_mgnvf")]
-unique_name_in_owner = true
-visible = false
 
 [node name="middle spikes" type="Node" parent="SecondLevel_elements"]
 
@@ -1430,6 +1421,61 @@ position = Vector2(11456, 598)
 [node name="Spike199" parent="SecondLevel_elements/middle spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(11475, 598)
 
+[node name="Second_Bomb" parent="SecondLevel_elements" instance=ExtResource("3_q5tfl")]
+unique_name_in_owner = true
+position = Vector2(12477, -195)
+motion_mode = 1
+
+[node name="PortaEntrada2" parent="SecondLevel_elements" instance=ExtResource("5_snffl")]
+position = Vector2(12250, -179)
+teste = "entrada"
+
+[node name="PortaSaida2" parent="SecondLevel_elements" instance=ExtResource("5_snffl")]
+position = Vector2(12521, -178)
+
+[node name="Desafio1Area" type="Area2D" parent="."]
+position = Vector2(4615, 490)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desafio1Area"]
+shape = SubResource("RectangleShape2D_vfj4n")
+
+[node name="Desafio1" parent="Desafio1Area" instance=ExtResource("10_mgnvf")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Desafio2Area" type="Area2D" parent="."]
+position = Vector2(12325, -186)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desafio2Area"]
+shape = SubResource("RectangleShape2D_vfj4n")
+
+[node name="Desafio2" parent="Desafio2Area" instance=ExtResource("11_nkx22")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Desafio3Area" type="Area2D" parent="."]
+position = Vector2(22148, -440)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desafio3Area"]
+shape = SubResource("RectangleShape2D_vfj4n")
+
+[node name="Desafio3" parent="Desafio3Area" instance=ExtResource("12_b66h0")]
+unique_name_in_owner = true
+visible = false
+
+[node name="ThirdLevel_elements" type="Node" parent="."]
+
+[node name="Third_Bomb" parent="ThirdLevel_elements" instance=ExtResource("3_q5tfl")]
+unique_name_in_owner = true
+position = Vector2(22278, -456)
+motion_mode = 1
+
+[node name="PortaEntrada3" parent="ThirdLevel_elements" instance=ExtResource("5_snffl")]
+position = Vector2(22072, -432)
+teste = "entrada"
+
 [connection signal="ready" from="PlayerCharacter" to="PlayerCharacter" method="_on_ready"]
 [connection signal="ready" from="SecondLevel_elements/First_Checkpoint" to="PlayerCharacter" method="_on_area_2d_ready"]
-[connection signal="body_entered" from="Area2D2" to="Area2D2/Desafio1" method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="Desafio1Area" to="Desafio1Area/Desafio1" method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="Desafio2Area" to="Desafio2Area/Desafio2" method="_on_desafio_2_area_body_entered"]
+[connection signal="body_entered" from="Desafio3Area" to="Desafio3Area/Desafio3" method="_on_desafio_3_area_body_entered"]
