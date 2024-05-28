@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://crge8xfuqcche"]
+[gd_scene load_steps=17 format=3 uid="uid://crge8xfuqcche"]
 
 [ext_resource type="Texture2D" uid="uid://eibusvysedrr" path="res://src/sprites/map/Terrain (16x16).png" id="1_g5jb0"]
+[ext_resource type="Script" path="res://src/Scripts/node_2d.gd" id="1_wnjpa"]
 [ext_resource type="Texture2D" uid="uid://cmxso08jy0ndo" path="res://MapsAndOther/Background/Brown.png" id="2_ar7lj"]
 [ext_resource type="Texture2D" uid="uid://dwrbfaihd0p1h" path="res://src/sprites/background/Gray.png" id="2_yhhiq"]
 [ext_resource type="Texture2D" uid="uid://dv5wkq88q2r04" path="res://MapsAndOther/Background/Purple.png" id="3_pht7c"]
@@ -573,6 +574,7 @@ sources/0 = SubResource("TileSetAtlasSource_f833j")
 size = Vector2(65, 109.5)
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_wnjpa")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1

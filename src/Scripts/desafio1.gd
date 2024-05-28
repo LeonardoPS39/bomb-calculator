@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var question = %Desafio1 # Substitua pelo caminho correto para a sua questão
 @onready var bomb_collision = %First_Bomb/%CollisionShape2D # Substitua pelo caminho correto para o CollisionShape2D
 @onready var first_bomb = %First_Bomb
+@onready var main = $"../.."
 
 var player_body = null
 func _on_res_1_pressed():
@@ -20,6 +21,7 @@ func explode_bomb(player_body):
 	bomb_collision.shape.radius = 100 # Substitua pelo valor que deseja
 	player_body.position = Global.checkpoint_position
 	question.visible = false
+	main.reload()
 	# Adicione aqui o código para fazer a bomba "explodir"
 
 func _on_area_2d_2_body_entered(body):
