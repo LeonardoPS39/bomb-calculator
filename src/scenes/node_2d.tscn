@@ -1474,8 +1474,6 @@ motion_mode = 1
 position = Vector2(22072, -432)
 teste = "entrada"
 
-[node name="ThirdLevel_elements" type="Node" parent="."]
-
 [node name="Last spikes" type="Node" parent="ThirdLevel_elements"]
 
 [node name="Spike" parent="ThirdLevel_elements/Last spikes" instance=ExtResource("6_yf5ku")]
@@ -2232,8 +2230,12 @@ position = Vector2(21243, 471)
 [node name="Spike190" parent="ThirdLevel_elements/Last spikes" instance=ExtResource("6_yf5ku")]
 position = Vector2(21263, 471)
 
+[node name="Second_Checkpoint2" parent="ThirdLevel_elements" instance=ExtResource("9_030sf")]
+position = Vector2(12581, -148)
+
 [connection signal="ready" from="PlayerCharacter" to="PlayerCharacter" method="_on_ready"]
 [connection signal="ready" from="SecondLevel_elements/First_Checkpoint" to="PlayerCharacter" method="_on_area_2d_ready"]
 [connection signal="body_entered" from="Desafio1Area" to="Desafio1Area/Desafio1" method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="Desafio2Area" to="Desafio2Area/Desafio2" method="_on_desafio_2_area_body_entered"]
 [connection signal="body_entered" from="Desafio3Area" to="Desafio3Area/Desafio3" method="_on_desafio_3_area_body_entered"]
+[connection signal="ready" from="ThirdLevel_elements/Second_Checkpoint2" to="PlayerCharacter" method="_on_area_2d_ready"]
