@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://ca4735pg4ykrj"]
+[gd_scene load_steps=14 format=3 uid="uid://ca4735pg4ykrj"]
 
 [ext_resource type="Texture2D" uid="uid://dl6cn553nlsp4" path="res://UsefulSprites/7-Objects/1-BOMB/2-Bomb On/1.png" id="1_4r2nq"]
+[ext_resource type="Script" path="res://src/Scripts/bomb.gd" id="1_8h22q"]
 [ext_resource type="Texture2D" uid="uid://druaskorwxpfg" path="res://UsefulSprites/7-Objects/1-BOMB/2-Bomb On/2.png" id="2_newls"]
 [ext_resource type="Texture2D" uid="uid://be4wmespa5g40" path="res://UsefulSprites/7-Objects/1-BOMB/2-Bomb On/3.png" id="3_awpa3"]
 [ext_resource type="Texture2D" uid="uid://pt6fl35h1rjr" path="res://UsefulSprites/7-Objects/1-BOMB/2-Bomb On/4.png" id="4_aak5a"]
@@ -53,8 +54,9 @@ animations = [{
 radius = 14.0
 height = 28.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Bomb" type="CharacterBody2D"]
 scale = Vector2(1.5, 1.5)
+script = ExtResource("1_8h22q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -65,5 +67,6 @@ autoplay = "default"
 frame_progress = 0.344943
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(1, 12)
 shape = SubResource("CapsuleShape2D_ylgbl")

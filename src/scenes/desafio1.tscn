@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2eu07dvhi8lt"]
+
+[ext_resource type="Script" path="res://src/Scripts/desafio1.gd" id="1_wjxw0"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_wjxw0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0.207843, 0.478431, 0.439216, 0.556863)
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+offset_left = 461.0
+offset_top = 29.0
+offset_right = 690.0
+offset_bottom = 52.0
+grow_horizontal = 2
+text = "O que são derivadas parciais?"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 29.0
+offset_top = 176.0
+offset_right = 1144.0
+offset_bottom = 291.0
+
+[node name="Res1" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "O cálculo de várias variáveis é semelhante ao cálculo de uma variável aplicado a várias variáveis, uma de cada vez."
+alignment = 0
+
+[node name="Res2" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "As derivadas parciais são usadas apenas em funções que dependem de uma única variável, permitindo analisar a taxa de variação dessa variável ao longo do tempo."
+alignment = 0
+
+[node name="Res3" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "A derivada parcial de uma função em relação a uma variável específica é obtida integrando a função em relação a essa variável enquanto mantém as outras variáveis constantes."
+alignment = 0
+
+[connection signal="pressed" from="VBoxContainer/Res1" to="." method="_on_res_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/Res2" to="." method="_on_res_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Res3" to="." method="_on_res_3_pressed"]
