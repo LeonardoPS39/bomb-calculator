@@ -6,10 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8lg8"]
 size = Vector2(12.6667, 11.3333)
 
-[node name="Area2D" type="Area2D"]
+[node name="Spike" type="Area2D"]
 scale = Vector2(3, 3)
 collision_layer = 2
-collision_mask = 2
 script = ExtResource("1_xpafd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
