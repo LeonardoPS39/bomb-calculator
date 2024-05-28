@@ -8,6 +8,7 @@ var player_body = null
 func _on_res_1_pressed():
 	question.visible = false
 	second_bomb.free()
+	get_tree().change_scene_to_file("res://src/scenes/main_menu.tscn")
 	
 func _on_res_2_pressed():
 	explode_bomb(player_body)
