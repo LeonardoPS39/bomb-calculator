@@ -32,7 +32,7 @@ offset_bottom = 291.0
 texture_filter = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
-text = "Procuramos por pontos onde o gráfico tenha uma reta tangente horizontal. (Alternativa correta)"
+text = "Procuramos por pontos onde o gráfico tenha uma reta tangente horizontal."
 alignment = 0
 
 [node name="Res2" type="Button" parent="VBoxContainer"]

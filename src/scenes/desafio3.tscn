@@ -32,7 +32,7 @@ offset_bottom = 291.0
 texture_filter = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
-text = "Integrais duplas são uma forma de integrar sobre uma área bidimensional, elas nos permitem calcular o volume sob uma superfície. (Alternativa correta)"
+text = "Integrais duplas são uma forma de integrar sobre uma área bidimensional, elas nos permitem calcular o volume sob uma superfície."
 alignment = 0
 
 [node name="Res2" type="Button" parent="VBoxContainer"]
